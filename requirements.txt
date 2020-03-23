@@ -1,0 +1,13 @@
+#Flask==0.10
+#Markdown==2.5.2
+gspread
+oauth2client
+requests
+requests-toolbelt
+#python27 only requests-toolbelt
+webapp3
+google-api-python-client
+lxml
+WebOb
+Paste
+webapp2==3.0.0b1

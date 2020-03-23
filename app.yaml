@@ -1,0 +1,45 @@
+runtime: python37
+#threadsafe and api_version only with python2.7
+#api_version: 1
+#threadsafe: true
+
+
+
+handlers:
+- url: /quagga/
+  static_files: quagga/live_w_locator.html
+  upload: quagga/live_w_locator.html
+
+- url: /quagga/css/(.*\.css)
+  static_files: quagga/css/\1
+  mime_type: text/css
+  upload: quagga/css/(.*\.css)
+
+- url: /quagga/(.*\.js)
+  static_files: quagga/\1
+  mime_type: text/javascript
+  upload: quagga/(.*\.js)
+
+- url: /dist/(.*\.js)
+  static_files: quagga/dist/\1
+  mime_type: text/javascript
+  upload: quagga/dist/(.*\.js)
+
+- url: /.*
+  script: auto
+
+# below only with python27
+# script: main.app
+
+    #below only for python27, python3 only with requirements.txt
+#https://stackoverflow.com/questions/30381581/sslerror-cant-connect-to-https-url-because-the-ssl-module-is-not-available-on
+#libraries:
+#- name: ssl
+#  version: latest
+#libraries:
+#- name: gspread
+#  version: "3.0.0"
+#- name: oauth2client
+#  version: "4.1.2"
+#- name: requests
+#  version: "2.18.4"
